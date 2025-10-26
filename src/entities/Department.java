@@ -68,10 +68,10 @@ public class Department {
 		return sum;
 	}
 	public String toString() {
-		String name = null;
+		String nameEmp = null;
 		for (Employee x: employees) {
-			name = x.getName();
+			nameEmp = x.getName();
 		}
-	return name;
+	return nameEmp;
 	}
 }
