@@ -15,7 +15,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		 
 		
-		System.out.print("Nome do departamento de vendas: ");
+		System.out.print("Nome do departamento: ");
 		String nameDepartament = sc.nextLine();
 		System.out.print("Dia de pagamento: ");
 		int payDay = sc.nextInt();
@@ -42,12 +42,11 @@ public class Program {
 		}
 		
 		System.out.println("\nFOLHA DE PAGAMENTO:");
-		System.out.printf("Departamento Vendas = R$ %.2f%n",department.payroll());
+		System.out.printf("Departamento " + department.getName() +  "= R$ %.2f%n",department.payroll());
 		System.out.println("Pagamento realizado no dia "+ department.getPayDay());
 		System.out.println("Funcionarios:");
-		Employee employee = new Employee();
 		
-		System.out.println(department.getEmployee().toString());
+		System.out.println(department.toString());
 		
 		System.out.println("Para dúvidas favor entrar em contato: " + department.getAddress().getEmail());
 		
