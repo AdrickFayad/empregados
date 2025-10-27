@@ -67,11 +67,5 @@ public class Department {
 		}
 		return sum;
 	}
-	public String toString() {
-		String nameEmp = null;
-		for (Employee x: employees) {
-			nameEmp = x.getName();
-		}
-	return nameEmp;
-	}
+	
 }

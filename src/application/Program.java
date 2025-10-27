@@ -33,25 +33,29 @@ public class Program {
 		for (int i=0; i<nFuncionario; i++) {
 			System.out.println("Dados do funcionario " + (i+1)+ ":");
 			System.out.print("Nome: ");
-			String name = sc.nextLine();
 			sc.nextLine();
+			String name = sc.nextLine();
 			System.out.print("Salário: ");
 			Double salario = sc.nextDouble();
 			Employee employee = new Employee(name, salario);
 			department.addEmployee(employee);
 		}
-		
-		System.out.println("\nFOLHA DE PAGAMENTO:");
-		System.out.printf("Departamento " + department.getName() +  "= R$ %.2f%n",department.payroll());
-		System.out.println("Pagamento realizado no dia "+ department.getPayDay());
-		System.out.println("Funcionarios:");
-		
-		System.out.println(department.toString());
-		
-		System.out.println("Para dúvidas favor entrar em contato: " + department.getAddress().getEmail());
-		
+		showReport(department);
 		
 		sc.close();
 	}
 
+	public static void showReport(Department department) {
+		System.out.println("\nFOLHA DE PAGAMENTO:");
+		System.out.printf("Departamento %s = R$ %.2f%n",department.getName(), department.payroll());
+		System.out.println("Pagamento realizado no dia "+ department.getPayDay());
+		System.out.println("Funcionarios:");
+		
+		for (Employee emp: department.getEmployee()) {
+			System.out.println(emp.getName());
+		}
+		
+		System.out.println("Para dúvidas favor entrar em contato: " + department.getAddress().getEmail());
+		
+	}
 }
